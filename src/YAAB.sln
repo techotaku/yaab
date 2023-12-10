@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YAAB.Cloudflare", "YAAB.Cloudflare\YAAB.Cloudflare.csproj", "{11AF2DF0-B93A-4673-9F80-8FF08FADC99A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YAAB.Server", "YAAB.Server\YAAB.Server.csproj", "{93630B8A-F9AB-4282-9224-A7943B32BD0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11AF2DF0-B93A-4673-9F80-8FF08FADC99A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11AF2DF0-B93A-4673-9F80-8FF08FADC99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11AF2DF0-B93A-4673-9F80-8FF08FADC99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11AF2DF0-B93A-4673-9F80-8FF08FADC99A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93630B8A-F9AB-4282-9224-A7943B32BD0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93630B8A-F9AB-4282-9224-A7943B32BD0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93630B8A-F9AB-4282-9224-A7943B32BD0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93630B8A-F9AB-4282-9224-A7943B32BD0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9FF55B4A-75EE-4ACA-ADC3-21F83FA8E5A2}
+	EndGlobalSection
+EndGlobal
