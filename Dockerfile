@@ -5,7 +5,7 @@ RUN dotnet restore -r linux-musl-x64
 WORKDIR /source/YAAB.Server
 RUN dotnet publish -c release -o /app -r linux-musl-x64 --no-self-contained --no-restore
 
-FROM mcr.microsoft.com/dotnet/runtime:8.0-alpine
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine
 WORKDIR /app
 COPY --from=build /app ./
 
