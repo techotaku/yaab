@@ -124,7 +124,7 @@ namespace YAAB.Server.Controllers
                                 return "未检测到提示词，请重新输入指令。";
                             }
                             _ = TextToImage(wechat, cloudflareAi, user, tokens[1]);
-                            return "";
+                            return $"已提交图片生成请求，请稍候。\r\n您的提示词为：\r\n{tokens[1]}";
                         }
                 }
             }
