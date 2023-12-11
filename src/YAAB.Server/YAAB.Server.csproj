@@ -13,4 +13,8 @@
     <PackageReference Include="SKIT.FlurlHttpClient.Wechat.Api" Version="2.35.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\YAAB.Cloudflare\YAAB.Cloudflare.csproj" />
+  </ItemGroup>
+
 </Project>

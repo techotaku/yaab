@@ -1,4 +1,9 @@
 using System.Text;
+using YAAB.Cloudflare;
+using YAAB.Cloudflare.Options;
+using YAAB.Server.Options;
+using YAAB.Server.Repositories;
+using YAAB.Server.Services;
 
 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
@@ -6,15 +11,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.Configure<WeChatOptions>(builder.Configuration.GetSection(WeChatOptions.WeChat));
+builder.Services.Configure<CloudflareAiOptions>(builder.Configuration.GetSection(CloudflareAiOptions.Cloudflare));
 
-builder.Services.Configure<YAAB.Server.Options.WeChatOptions>(builder.Configuration.GetSection(YAAB.Server.Options.WeChatOptions.WeChat));
-
-builder.Services.AddSingleton<YAAB.Server.Services.IDistributedLockFactory, YAAB.Server.Services.DistributedLockFactory>();
-builder.Services.AddSingleton<YAAB.Server.Repositories.IWeChatAccessTokenEntityRepository, YAAB.Server.Repositories.WeChatAccessTokenEntityRepository>();
+builder.Services.AddHttpClient<CloudflareAiClient>();
+builder.Services.AddSingleton<IDistributedLockFactory, DistributedLockFactory>();
+builder.Services.AddSingleton<IWeChatAccessTokenEntityRepository, WeChatAccessTokenEntityRepository>();
 builder.Services.AddHttpClient();
-builder.Services.AddSingleton<YAAB.Server.Services.IWeChatApiHttpClientFactory, YAAB.Server.Services.WeChatApiHttpClientFactory>();
-builder.Services.AddHostedService<YAAB.Server.Services.WeChatAccessTokenRefreshingService>();
+builder.Services.AddSingleton<IWeChatApiHttpClientFactory, WeChatApiHttpClientFactory>();
+builder.Services.AddHostedService<WeChatAccessTokenRefreshingService>();
+
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
